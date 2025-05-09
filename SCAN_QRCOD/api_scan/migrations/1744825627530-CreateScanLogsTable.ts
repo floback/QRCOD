@@ -43,7 +43,7 @@ export class CreateScanLogsTable1713300000003 implements MigrationInterface {
           type: 'float',
         },
         {
-          name: 'creation_date',
+          name: 'create_date',
           type: 'timestamp',
           default: 'CURRENT_TIMESTAMP',
         },

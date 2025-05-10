@@ -15,4 +15,5 @@ export class AuthEntity {
 @Column({ type: 'text' })
 token: string;
 
+
 }

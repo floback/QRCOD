@@ -29,6 +29,6 @@ export class QrcodeEntity {
   img: string;
 
   @ManyToOne(() => UserEntity, (user) => user.qrcodes)
-  @JoinColumn({ name: 'id_user' }) // <<<<<< AQUI VOCÊ INFORMA O NOME CERTO
+  @JoinColumn({ name: 'id_user' }) 
   user: UserEntity;
 }

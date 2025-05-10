@@ -6,10 +6,11 @@ import { JwtStrategy } from './strategies/jwt.strategy';
 import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
 import { UserEntity } from '../user/entities/user.entity';
+import { AuthEntity } from './entities/auth.entities';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([UserEntity]),
+    TypeOrmModule.forFeature([UserEntity, AuthEntity]),
     PassportModule,
     JwtModule.register({
       secret: process.env.JWT_SECRET || 'jwt-secret',

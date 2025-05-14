@@ -14,7 +14,7 @@ import { AuthEntity } from './entities/auth.entities';
     PassportModule,
     JwtModule.register({
       secret: process.env.JWT_SECRET || 'jwt-secret',
-      signOptions: { expiresIn: '1d' }, // Pode mudar via env
+      signOptions: { expiresIn: '1d' }, 
     }),
   ],
   providers: [AuthService, JwtStrategy],

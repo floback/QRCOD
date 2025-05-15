@@ -15,7 +15,7 @@ export class EmailService {
     private readonly usersRepository: Repository<UserEntity>,
 
     private readonly mailerService: MailerService,
-  ) {}
+  ) { }
 
   async sendRecoveryEmail(email: string): Promise<string> {
     const user = await this.usersRepository.findOne({ where: { email } });
@@ -30,7 +30,8 @@ export class EmailService {
       expiresIn: '10m',
     });
 
-    const resetLink = `http://localhost:3000/reset-password?token=${token}`;
+    const resetLink = `${process.env.CLIENT_URL}/email/reset?token=${token}`;
+
 
     await this.mailerService.sendMail({
       to: email,

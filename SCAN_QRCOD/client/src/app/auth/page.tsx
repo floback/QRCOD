@@ -30,7 +30,7 @@ export default function LoginPage() {
 
       // Simula tempo de carregamento antes de redirecionar
       setTimeout(() => {
-        router.push("/dashboard");
+        router.push("//");
       }, 2000);
     } catch (err) {
       setError("E-mail ou senha inválidos!");
@@ -51,7 +51,7 @@ export default function LoginPage() {
         className="bg-white p-10 w-130 rounded-3xl border shadow-lg"
       >
         <div className="mb-8 text-center">
-        <h2 className="text-2xl font-bold text-gray-800">Login</h2>
+        <h2 className="text-4xl font-bold text-zinc-700 font-sans">Login</h2> 
         </div>
 
         {error && (
@@ -66,10 +66,10 @@ export default function LoginPage() {
           </label>
           <input
             type="email"
-            className="w-full border text-zinc-700 border-gray-300 p-2.5 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 transition-all"
+            className="w-full border px-4 py-2 rounded text-zinc-500"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="seu@email.com"
+            placeholder="Digite seu E-mail"
             required
           />
         </div>
@@ -81,10 +81,10 @@ export default function LoginPage() {
           <div className="relative">
             <input
               type={showPassword ? "text" : "password"}
-              className="w-full border border-gray-300 p-2.5 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 transition-all"
+            className="w-full border px-4 py-2 rounded text-zinc-500"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="••••••••"
+              placeholder="Digite seu Password"
               required
             />
             <button
@@ -111,7 +111,7 @@ export default function LoginPage() {
 
         <div className="mt-5 text-center">
           <a
-            href="/recuperar-senha"
+            href="/email/recovery"
             className="text-sm text-cyan-600 hover:text-cyan-800 hover:underline transition-colors"
           >
             Esqueceu a senha?
